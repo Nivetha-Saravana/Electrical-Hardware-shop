@@ -1,0 +1,22 @@
+.footer {
+    background-color: #3c4c5d;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  
+  .contact-details div {
+    flex: 1;
+  }
+  
+  .contact-details h3 {
+    margin-top: 0;
+  }
+  
