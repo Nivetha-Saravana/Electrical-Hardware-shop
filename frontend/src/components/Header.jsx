@@ -39,7 +39,7 @@ const Header = () => {
           <LinkContainer to='/'>
             <Navbar.Brand>
               <img src={logo} alt='ProShop' style={{ width: '60px', height: '60px',marginRight: '10px' }} />
-              Vinayaga Agencies
+              Vinayaga 
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
