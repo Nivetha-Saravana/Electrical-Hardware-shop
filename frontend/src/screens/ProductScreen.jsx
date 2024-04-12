@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -81,7 +81,9 @@ const ProductScreen = () => {
           <Meta title={product.name} description={product.description} />
           <Row>
             <Col md={6}>
-              <Image src={product.image} alt={product.name} fluid />
+              <div className='center-image'>
+                <Image src={product.image} alt={product.name} />
+              </div>
             </Col>
             <Col md={3}>
               <ListGroup variant='flush'>

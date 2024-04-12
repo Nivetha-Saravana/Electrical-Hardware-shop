@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel, Image } from 'react-bootstrap';
 import Message from './Message';
@@ -13,7 +14,14 @@ const ProductCarousel = () => {
       {products.map((product) => (
         <Carousel.Item key={product._id}>
           <Link to={`/product/${product._id}`}>
-            <Image src={product.image} alt={product.name} fluid />
+            <div style={{ width: '30%', height: '300px', overflow: 'hidden' }}>
+              <Image
+                src={product.image}
+                alt={product.name}
+                fluid
+                style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+              />
+            </div>
             <Carousel.Caption className='carousel-caption'>
               <h2 className='text-white text-right'>
                 {product.name} (₹{product.price})

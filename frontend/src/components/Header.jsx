@@ -8,6 +8,7 @@ import { logout } from '../slices/authSlice';
 import SearchBox from './SearchBox';
 import logo from '../assets/logo_shop.png';
 import { resetCart } from '../slices/cartSlice';
+import Search from './Search'
 
 const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -35,17 +36,18 @@ const Header = () => {
     <header>
       <Navbar bg='primary' variant='dark' expand='lg' collapseOnSelect>
         <Container>
-          <LinkContainer to='/slider'>
+          <LinkContainer to='/'>
             <Navbar.Brand>
               <img src={logo} alt='ProShop' style={{ width: '60px', height: '60px',marginRight: '10px' }} />
-              Vinayaga Agency
+              Vinayaga Agencies
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto'>
+              <Search/>
               <SearchBox />
-              <LinkContainer to='/cart'>
+              <LinkContainer to='/cart' style={{marginRight: '20px'}}>
                 <Nav.Link>
                   <FaShoppingCart /> Cart
                   {cartItems.length > 0 && (
@@ -66,12 +68,14 @@ const Header = () => {
                     </NavDropdown.Item>
                   </NavDropdown>
                 </>
-              ) : (
-                <LinkContainer to='/login'>
-                  <Nav.Link>
-                    <FaUser /> Sign In
-                  </Nav.Link>
-                </LinkContainer>
+              )  : (
+                !userInfo  && (
+                  <LinkContainer to='/login'>
+                    <Nav.Link>
+                      <FaUser /> Sign In
+                    </Nav.Link>
+                  </LinkContainer>
+                )
               )}
 
               {/* Admin Links */}
