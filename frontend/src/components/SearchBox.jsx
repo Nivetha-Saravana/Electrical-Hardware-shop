@@ -6,7 +6,7 @@ const SearchBox = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('Products');
 
-  const categories = ['Products', 'Wire', 'Pipe', 'Switch', 'Drill', 'Paint'];
+  const categories = ['Products', 'Wire', 'Pipe', 'Switch','Fan', 'Drill', 'Paint'];
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
